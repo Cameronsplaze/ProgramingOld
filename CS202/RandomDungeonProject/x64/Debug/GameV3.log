@@ -1,0 +1,103 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Armor.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Armor.cpp, GameV3\Armor.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Attributes.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Attributes.cpp, GameV3\Attributes.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Character.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Character.cpp, GameV3\Character.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of CharCreation.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are CharCreation.cpp, GameV3\CharCreation.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Class.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Class.cpp, GameV3\Class.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Combat.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Combat.cpp, GameV3\Combat.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Dice.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Dice.cpp, GameV3\Dice.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of DungeonMaster.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are DungeonMaster.cpp, GameV3\DungeonMaster.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Enemy.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Enemy.cpp, GameV3\Enemy.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Engine.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Engine.cpp, GameV3\Engine.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Entity.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Entity.cpp, GameV3\Entity.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Event.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Event.cpp, GameV3\Event.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Inventory.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\Inventory.cpp, Inventory.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Item.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\Item.cpp, Item.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of ItemManager.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\ItemManager.cpp, ItemManager.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of LevelEngine.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\LevelEngine.cpp, LevelEngine.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of main.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\main.cpp, main.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Player.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\Player.cpp, Player.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of RandomDungeon.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\RandomDungeon.cpp, RandomDungeon.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of RoomData.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\RoomData.cpp, RoomData.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of TextureManager.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\TextureManager.cpp, TextureManager.cpp.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Weapon.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GameV3\Weapon.cpp, Weapon.cpp.
+  main.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\main.cpp(1): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Weapon.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\entity.hpp(9): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  TextureManager.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\texturemanager.hpp(8): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  RandomDungeon.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\randomdungeon.hpp(2): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Player.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\player.hpp(10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  LevelEngine.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\engine.hpp(17): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  ItemManager.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\entity.hpp(9): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Item.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\entity.hpp(9): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Inventory.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\inventory.h(3): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  main.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\main.cpp': No such file or directory
+  Weapon.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Weapon.cpp': No such file or directory
+  TextureManager.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\TextureManager.cpp': No such file or directory
+  RoomData.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\RoomData.cpp': No such file or directory
+  RandomDungeon.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\RandomDungeon.cpp': No such file or directory
+  Player.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Player.cpp': No such file or directory
+  LevelEngine.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\LevelEngine.cpp': No such file or directory
+  ItemManager.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\ItemManager.cpp': No such file or directory
+  Item.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Item.cpp': No such file or directory
+  Inventory.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Inventory.cpp': No such file or directory
+  Event.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Event.cpp': No such file or directory
+  Generating Code...
+  Compiling...
+  Entity.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Entity.cpp': No such file or directory
+  Engine.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Engine.cpp': No such file or directory
+  Enemy.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Enemy.cpp': No such file or directory
+  DungeonMaster.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\DungeonMaster.cpp': No such file or directory
+  Dice.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Dice.cpp': No such file or directory
+  Combat.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Combat.cpp': No such file or directory
+  Class.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Class.cpp': No such file or directory
+  Character.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Character.cpp': No such file or directory
+  CharCreation.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\CharCreation.cpp': No such file or directory
+  Attributes.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Attributes.cpp': No such file or directory
+  Armor.cpp
+c1xx : fatal error C1083: Cannot open source file: 'GameV3\Armor.cpp': No such file or directory
+  Event.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\event.hpp(13): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Entity.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\entity.hpp(9): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Engine.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\engine.cpp(1): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Enemy.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\player.hpp(10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  DungeonMaster.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\event.hpp(13): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Combat.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\entity.hpp(9): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Character.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\entity.hpp(9): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Armor.cpp
+c:\users\cameron\desktop\_git\cs202spring2016_group3\cs202spring2016_group3\gamev3\gamev3\entity.hpp(9): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Generating Code...

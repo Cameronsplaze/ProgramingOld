@@ -1,0 +1,15 @@
+For this project you will be working in groups of two or three. The assignment will be to write encryption and decryption functions for the following three problems. 
+
+You must write a function that encrypts and decrypts Morse Code https://en.wikipedia.org/wiki/Morse_code. 
+
+You  must write a function which both encrypts and decrypts using the Caesar Cipher
+
+https://en.wikipedia.org/wiki/Caesar_cipher
+
+You must also write a function which encrypts and decrypts a simple substitution cipher when provided with a key to do so. 
+
+
+All three problems must use pointers and C-strings in their implementation. Vectors and std::strings are not allowed. 
+
+A testing program will be provided this weekend for you to compare your results against before turning them in. 
+Brandon

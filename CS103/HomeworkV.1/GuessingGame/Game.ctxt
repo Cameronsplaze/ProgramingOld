@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=maxNumber
+comment0.target=Game(int)
+comment1.params=guess
+comment1.target=boolean\ guess(int)
+comment2.params=maxNumber
+comment2.target=void\ reset(int)
+numComments=3

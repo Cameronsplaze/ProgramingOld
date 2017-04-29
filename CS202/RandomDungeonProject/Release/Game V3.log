@@ -1,0 +1,33 @@
+﻿  Dice.cpp
+  Engine.cpp
+  Entity.cpp
+  Inventory.cpp
+Inventory.cpp(11): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(24): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(43): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(57): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(73): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(154): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(161): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(166): warning C4305: '-=': truncation from 'double' to 'float'
+Inventory.cpp(185): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(189): warning C4018: '<': signed/unsigned mismatch
+Inventory.cpp(234): warning C4018: '<': signed/unsigned mismatch
+  Item.cpp
+  LevelEngine.cpp
+LevelEngine.cpp(36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+LevelEngine.cpp(37): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+LevelEngine.cpp(48): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+LevelEngine.cpp(71): warning C4101: 'roomID': unreferenced local variable
+  main.cpp
+  Player.cpp
+  RandomDungeon.cpp
+RandomDungeon.cpp(102): warning C4018: '<': signed/unsigned mismatch
+RandomDungeon.cpp(307): warning C4018: '<': signed/unsigned mismatch
+  RoomData.cpp
+  TextureManager.cpp
+  Generating Code...
+c:\users\cameron\desktop\_git\cs202spring2016_group3\gamev3\gamev3\randomdungeon.cpp(94): warning C4715: 'RandomDungeon::getRoomNumber': not all control paths return a value
+c:\users\cameron\desktop\_git\cs202spring2016_group3\gamev3\gamev3\inventory.cpp(52): warning C4172: returning address of local variable or temporary: nullitm
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+  Game V3.vcxproj -> C:\Users\Cameron\Desktop\_Git\cs202spring2016_group3\GameV3\GameV3\Release\Game V3.exe

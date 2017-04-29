@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Nerf()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nerf\r\n
+comment1.params=darts
+comment1.target=void\ reload(int)
+comment1.text=\r\n\ adds\ darts\ to\ clip\ or\ reloads\ the\ clip\r\n\ @param\ Darts\ number\ of\ shots\ in\ the\ clip.\r\n
+comment2.params=
+comment2.target=void\ shoot()
+comment2.text=\r\n\ shoots\ how\ ever\ many\ darts\ that\ assgin\ it\ to\ shoot\r\n
+comment3.params=
+comment3.target=int\ getdartsInClip()
+comment3.text=\r\n\ returns\ the\ amount\ of\ darts\ in\ clip\r\n
+numComments=4

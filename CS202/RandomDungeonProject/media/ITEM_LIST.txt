@@ -1,0 +1,101 @@
+//
+WEAPON:
+ID
+NAME
+DESCRIPTION
+SPRITE FILE
+COST
+WEIGHT
+HEAVY
+MARTIAL
+RANGE
+DAMAGE
+//
+ARMOR:
+ID
+NAME
+DESCRIPTION
+SPRITE FILE
+COST
+WEIGHT
+ARMOR TYPE
+ARMOR CLASS
+//
+
+WEAPON
+0
+Short Sword
+A dull short sword. It's pretty useless.
+media/Sprites/Short_Sword.png
+5
+5
+0
+0
+1
+1d4
+
+WEAPON
+1
+Battleaxe
+A hefty battleaxe perfect for doing axe things.
+media/Sprites/Battleaxe.png
+15
+8
+1
+1
+1
+1d10
+
+WEAPON
+2
+Dagger
+A small dagger perfect for vanquishing your foes or opening your letters.
+media/Sprites/Dagger.png
+10
+2
+0
+0
+1
+2d6
+
+WEAPON
+3
+Staff
+A mystical staff full of magical energy, or a useless wooden stick. You can't really tell.
+media/Sprites/Staff.png
+15
+5
+1
+0
+1
+1d8
+
+ARMOR
+4
+Cloth Armor
+Cloth armor that covers you head to toe. Although it doesn't offer much protection since it's cloth.
+media/Sprites/Cloth.png
+10
+5
+LIGHT
+5
+
+ARMOR
+5
+Leather Armor
+Sturdy leather armor that offers protection while making you look stylin'.
+media/Sprites/Leather.png
+15
+10
+MEDIUM
+10
+
+ARMOR
+6
+Chainmail Armor
+Strong chainmail armor capable of protecting you from mighty blows! Probably...
+media/Sprites/Chainmail.png
+25
+15
+HEAVY
+15

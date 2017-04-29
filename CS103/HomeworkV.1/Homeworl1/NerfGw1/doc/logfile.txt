@@ -1,0 +1,44 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.7
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Users\Cameron\Desktop\NerfGw1
+-d
+C:\Users\Cameron\Desktop\NerfGw1\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+C:\Users\Cameron\Desktop\NerfGw1\Nerf.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\Cameron\Desktop\NerfGw1\Nerf.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_45
+Building tree for all the packages and classes...
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\Nerf.html...
+C:\Users\Cameron\Desktop\NerfGw1\Nerf.java:9: warning - @date is an unknown tag.
+C:\Users\Cameron\Desktop\NerfGw1\Nerf.java:31: warning - @param argument "Darts" is not a parameter name.
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\package-frame.html...
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\package-summary.html...
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\allclasses-frame.html...
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\allclasses-noframe.html...
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\index.html...
+Generating C:\Users\Cameron\Desktop\NerfGw1\doc\stylesheet.css...
+2 warnings
