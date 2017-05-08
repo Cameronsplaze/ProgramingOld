@@ -1,9 +1,9 @@
--- interpit.lua
--- Bryan Burkhardt
--- 27 Apr 2017
--- CS 331 - Assignment 6
--- Interpreter for Kanchil
---      Requires parseit.lua and lexit.lua
+-- interpit.lua 
+-- Cameron Showalter
+
+-- For CS F331 / CSCE A331 Spring 2017
+-- Interpret AST from parseit.parse
+-- For Assignment 6, Exercise B
 
 
 -- *********************************************************************
@@ -85,6 +85,8 @@ local function boolToInt(b)
     end
 end
 
+
+
 -- ***** Primary Function for Client Code *****
 
 
@@ -108,75 +110,53 @@ function interpit.interp(ast, state, incall, outcall)
     -- versions of state, incall, and outcall may be used. The
     -- function-wide version of state may be modified as appropriate.
 
-    local interp_stmt_list
-    local getLHS
     local isLHS
+    local getLHS
     local intExpression
     local boolExpression
+    local interp_stmt_list
     local interp_stmt
-   
-    function interp_stmt_list(ast)
-        for i = 2, #ast do
-            interp_stmt(ast[i])
-        end
-    end
 
-    function getLHS(ast)
-        local rv
 
-        if ast[1] == NUMLIT_VAL then 
-            rv = strToNum(ast[2])
-        elseif ast[1] == VARID_VAL then
-            rv = state.v[ast[2]]
-        elseif ast[1] == ARRAY_REF then
-            if state.a[ast[2][2]] ~= nil then
-                rv = state.a[ast[2][2]][intExpression(ast[3])]
-            else 
-                rv = 0
-            end
-        end
-
-        return rv
-    end
 
     function isLHS(ast)
-        
-        if ast[1] == NUMLIT_VAL or ast[1] == VARID_VAL
-            or ast[1] == ARRAY_REF then
+        if ast[1] == NUMLIT_VAL or ast[1] == VARID_VAL or ast[1] == ARRAY_REF then
             return true
-        end
-
-        if type(ast[1])=="table" then
-            if ast[1][1] == UN_OP then
-                if  ast[1][2] == "+" or
-                    ast[1][2] == "-" then
-                    return true
-                end
-            end
-
-            if ast[1][1] == BIN_OP then
-                if  ast[1][2] == "+" or
-                    ast[1][2] == "-" or
-                    ast[1][2] == "*" or
-                    ast[1][2] == "/" or
-                    ast[1][2] == "%" then
-                    return true
-                end
+        elseif type(ast[1])=="table" and ast[1][1] == UN_OP and (ast[1][2] == "+" or ast[1][2] == "-") then
+            return true
+        elseif ast[1][1] == BIN_OP then
+            if  ast[1][2] == "+" or ast[1][2] == "-" or ast[1][2] == "%" or
+                ast[1][2] == "*" or ast[1][2] == "/" then
+                return true
             end
         end
         return false
+    end
 
+    function getLHS(ast)
+        local returnMe
+
+        if ast[1] == NUMLIT_VAL then 
+            returnMe = strToNum(ast[2])
+        elseif ast[1] == VARID_VAL then
+            returnMe = state.v[ast[2]]
+        elseif ast[1] == ARRAY_REF then
+            if state.a[ast[2][2]] ~= nil then
+                returnMe = state.a[ast[2][2]][intExpression(ast[3])]
+            else 
+                returnMe = 0
+            end
+        end
+        return returnMe
     end
 
     function intExpression(ast)
-     
 
-        local rv=nil
-
+        local returnMe=nil
         local i = 1
 
-        if ast[1]==NUMLIT_VAL or ast[1] == VARID_VAL or ast[1] == ARRAY_REF then --num_lit, var_val, or array_ref
-            rv = getLHS(ast)
+        if ast[1] == NUMLIT_VAL or ast[1] == VARID_VAL or ast[1] == ARRAY_REF then
+            returnMe = getLHS(ast)
         else
             while ast[i][1] == BIN_OP do
                 i=i+1
@@ -184,13 +164,11 @@ function interpit.interp(ast, state, incall, outcall)
  
             i=i-1
             for j = i+1, #ast do
-               
-                local dummyValue
-            
+
+                local fooValue
                 if ast[j][1] == UN_OP then
 
                     local  sign = 1
-                        
                     if ast[j][2] == "-" then
                         sign = sign*-1
                     end
@@ -198,52 +176,51 @@ function interpit.interp(ast, state, incall, outcall)
                     j=j+1
                     if isLHS(ast[j]) then
                         if type(ast[j][1])=="table" then
-                            dummyValue = sign * intExpression(ast[j])
+                            fooValue = sign * intExpression(ast[j])
                         else
-                            dummyValue = sign * getLHS(ast[j])
+                            fooValue = sign * getLHS(ast[j])
                         end
                     else
-                        dummyValue = sign * boolToInt(boolExpression(ast[j]))
+                        fooValue = sign * boolToInt(boolExpression(ast[j]))
                     end
                 else 
                     if isLHS(ast[j]) then
     
                        if type(ast[j][1])=="table" then
-                            dummyValue = intExpression(ast[j])
+                            fooValue = intExpression(ast[j])
                         else
-                            dummyValue = getLHS(ast[j])
+                            fooValue = getLHS(ast[j])
                         end
                     else
-                        dummyValue = boolToInt(boolExpression(ast[j]))
+                        fooValue = boolToInt(boolExpression(ast[j]))
                     end
                 end
-
-                if rv == nil then
-                    rv = dummyValue
+                if returnMe == nil then
+                    returnMe = fooValue
                 elseif i > 0 then 
                     if ast[i][2] == '*' then
-                        rv = rv * dummyValue
+                        returnMe = returnMe * fooValue
                     elseif ast[i][2] == '/' then
-                        if dummyValue == 0 then
-                            rv = 0
+                        if fooValue == 0 then
+                            returnMe = 0
                         else
-                            local s = rv/dummyValue / math.abs(rv/dummyValue)
+                            local s = returnMe/fooValue / math.abs(returnMe/fooValue)
                             if s > 0 then
-                                rv = math.floor(rv / dummyValue)
+                                returnMe = math.floor(returnMe / fooValue)
                             else
-                                rv = math.ceil(rv / dummyValue)
+                                returnMe = math.ceil(returnMe / fooValue)
                             end
                         end
                     elseif ast[i][2] == '%' then
-                         if dummyValue == 0 then
-                            rv = 0
+                         if fooValue == 0 then
+                            returnMe = 0
                         else
-                            rv = rv % dummyValue    
+                            returnMe = returnMe % fooValue    
                         end
                     elseif ast[i][2] == '+' then 
-                        rv = rv + dummyValue  
+                        returnMe = returnMe + fooValue  
                     elseif ast[i][2] == '-' then
-                        rv = rv - dummyValue    
+                        returnMe = returnMe - fooValue    
                     end
                     i=i-1
                 end
@@ -251,25 +228,25 @@ function interpit.interp(ast, state, incall, outcall)
             end
         end
 
-        if rv == nil then
-            rv = 0
+        if returnMe == nil then
+            returnMe = 0
         end
 
-        return rv
+        return returnMe
     end
 
     function boolExpression(ast)
 
-        local rv=nil
-        local boolRv = nil
+        local tmpReturn=nil
+        local returnBool = nil
 
         local i = 1
 
         if ast[1]==BOOLLIT_VAL then
             if ast[2] == "false" then
-                boolRv = false
+                returnBool = false
             else
-                boolRv = true
+                returnBool = true
             end
         elseif isLHS(ast) then
             if intExpression(ast) == 0 then
@@ -281,56 +258,59 @@ function interpit.interp(ast, state, incall, outcall)
             while ast[i][1] == BIN_OP do
                 i=i+1
             end
- 
             i=i-1
             for j = i+1, #ast do
-               
-                local dummyValue
+                local saveExpression
             
                 if ast[j][1] == UN_OP then
                     if ast[j][2] == "!" then
                         j=j+1
-                        boolRv = not boolExpression(ast[j])
+                        returnBool = not boolExpression(ast[j])
                     end
                 end
-                
                 if i > 0 then
                     if ast[i][2] == "&&" or ast[i][2] == "||" then
-                        if boolRv == nil then
-                            boolRv = boolExpression(ast[j])
+                        if returnBool == nil then
+                            returnBool = boolExpression(ast[j])
                         elseif ast[i][2] == "&&" then
                             i=i-1
-                            boolRv = boolRv and boolExpression(ast[j])
+                            returnBool = returnBool and boolExpression(ast[j])
                         elseif ast[i][2] == "||" then
                             i=i-1
-                            boolRv = boolRv or boolExpression(ast[j])
+                            returnBool = returnBool or boolExpression(ast[j])
                         end
                     elseif isLHS(ast[j]) then
-                        if rv == nil then
-                            rv = intExpression(ast[j])
+                        if tmpReturn == nil then
+                            tmpReturn = intExpression(ast[j])
                         else
-                            dummyValue = intExpression(ast[j])
+                            saveExpression = intExpression(ast[j])
                             if ast[i][2] == "==" then
-                                boolRv = rv == dummyValue                    
-                            elseif ast[i][2] == ">=" then
-                                boolRv = rv >= dummyValue
-                            elseif ast[i][2] == "<=" then
-                                boolRv = rv <= dummyValue
-                            elseif ast[i][2] == ">" then
-                                boolRv = rv > dummyValue
-                            elseif ast[i][2] == "<" then
-                                boolRv = rv < dummyValue
+                                returnBool = tmpReturn == saveExpression                    
                             elseif ast[i][2] == "!=" then
-                                boolRv = rv ~= dummyValue
+                                returnBool = tmpReturn ~= saveExpression
+                            elseif ast[i][2] == ">" then
+                                returnBool = tmpReturn > saveExpression
+                            elseif ast[i][2] == "<" then
+                                returnBool = tmpReturn < saveExpression
+                            elseif ast[i][2] == ">=" then
+                                returnBool = tmpReturn >= saveExpression
+                            elseif ast[i][2] == "<=" then
+                                returnBool = tmpReturn <= saveExpression
                             end
-                            rv = dummyValue
+                            tmpReturn = saveExpression
                             i=i-1
                         end
                     end
                 end
             end
         end
-        return boolRv
+        return returnBool
+    end
+
+    function interp_stmt_list(ast)  -- Already declared local
+        for i = 2, #ast do
+            interp_stmt(ast[i])
+        end
     end
 
     function interp_stmt(ast)
@@ -342,15 +322,18 @@ function interpit.interp(ast, state, incall, outcall)
             if ast[2][1] == STRLIT_VAL then
                 str = ast[2][2]
                 outcall(str:sub(2,str:len()-1))
+            ----------------------Print stmt with expression-----------------------------
             elseif isLHS(ast[2]) then 
                 body = intExpression(ast[2])
                 outcall(numToStr(body))
-            elseif boolExpression(ast[2]) then
+            elseif boolExpression(ast[2]) == true then
                 outcall("1")
-            else
+            elseif boolExpression(ast[2]) == false then
                 outcall("0")
+            -----------------------------------------------------------------------------
             end
         elseif ast[1] == INPUT_STMT then
+            ---------------------------Input stmt----------------------------------------
             if ast[2][1] == VARID_VAL then
                 name = ast[2][2]
                 body = incall()
@@ -363,7 +346,9 @@ function interpit.interp(ast, state, incall, outcall)
                 end
                 state.a[name][intExpression(ast[2][3])] = strToNum(body)
             end
+            -----------------------------------------------------------------------------
         elseif ast[1] == SET_STMT then
+            ------------------------------Set stmt---------------------------------------
             if ast[2][1] == VARID_VAL then
                 name = ast[2][2]
                 if isLHS(ast[3]) then
@@ -385,6 +370,7 @@ function interpit.interp(ast, state, incall, outcall)
                 end
                 state.a[name][intExpression(ast[2][3])] = body 
             end
+            -----------------------------------------------------------------------------
         elseif ast[1] == SUB_STMT then
             name = ast[2]
             body = ast[3]
@@ -397,10 +383,9 @@ function interpit.interp(ast, state, incall, outcall)
             end
             interp_stmt_list(body)
         elseif ast[1] == IF_STMT then
-
+            -------------------------------If stmt---------------------------------------
             local passed = false
             local counter = 2
-
             for i=2, #ast-1, 2 do
                 if boolExpression(ast[i]) and not passed then
                     interp_stmt_list(ast[i+1])
@@ -411,14 +396,18 @@ function interpit.interp(ast, state, incall, outcall)
             if not passed and type(ast[counter+2]) == "table" then
                 interp_stmt_list(ast[counter+2])
             end
+            -----------------------------------------------------------------------------
         elseif ast[1] == WHILE_STMT then
+            ------------------------------While stmt-------------------------------------
             while boolExpression(ast[2])  do
                 interp_stmt_list(ast[3])
             end
+            -----------------------------------------------------------------------------
         else
         end
     end
 
+    -- Body of function interp
     interp_stmt_list(ast)
     return state
 end
@@ -428,3 +417,4 @@ end
 
 
 return interpit
+
