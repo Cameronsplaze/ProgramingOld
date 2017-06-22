@@ -1,0 +1,57 @@
+Cameron Showalter
+Spring 2017
+CS 372
+Final Part B
+
+(SOLID)
+Single responsibility principle:
+	Basically don't write classes or methods that do more than one thing when called. Methods
+ should do one thing when called, and what that is should be obvious by the method's name. something
+ prototyped "bool isFamous(string personName, vector<string> list)" should not also add the person's
+ name to the list of names.
+	Also, if the code you're writing is for a single part of the function ability of the program,
+ you should enclose all the methods in a class. For some cases, maybe even a derived class or two as
+ well.
+
+
+Open/closed principle:
+	This one has to do with either something should be labeled as public, private, or protected. If
+ it is something (normally inside a class) that things outside the class has no reason to modify/call,
+ it should be set as private, and add the appropriate get/set methods if needed. If there are other
+ inherited classes that rely on the methods/variables, they should be set as protected. Basically if
+ something does not have a reason to access/call something, don't let it. 
+
+
+Liskov substitution principle:
+	We used this when we refactored our group postscript project for HW4. This principle states
+ that if class A inherits from class B, class A should have some of the functions of B, but not all.
+ With the homework, we did this by writing a semi-virtual class that all of the complicated shapes
+ inherited from. Most of the code for drawing the postscript was in the base class, but because the
+ translate was different for layered, vertical, and horizontal, translate was overridden in the
+ advanced shapes.
+
+
+Interface segregation principle:
+	If I understand this one correctly, it ties very closely to the open/close principle. A
+ program should not know about code that it does not use. To accomplish this, you must try to split
+ your code up and keep it short and specific (tying into the short responsibility principle as well).
+ Where I think this principle applies the most is with security. If you keep everything segregated
+/apart, if one area of your code somehow becomes compromised (like maybe for an ATM), there is a
+ possibility that other areas will remain unaffected. 
+
+
+Dependency inversion Principle:
+	Low level classes that do things like access memory or link to a network, and high level
+ classes that handle the "advanced logic" of your program should not inherent directly to one another.
+ You should write a base class that handles all of the function calls between the two. This principle
+ seems real useful for readability/debugging, and also applies the Interface segregation principle. It
+ keeps any code separated, and specific as well.
+
+
+
+Resources:
+http://joelabrahamsson.com/the-openclosed-principle-a-real-world-example/
+https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)  -> and the 5 links to each principle
+
+
+

@@ -1,0 +1,31 @@
+Cameron Showalter
+Journal for Test Driven Development on HW2 for CS372
+http://osherove.com/tdd-kata-1
+
+1. Went to one of my old programs from 311 and deleted almost everything inside
+but the minimal framework for catch.h, renamed everything, and got it to compile
+using command line: "g++ -std=c++11 -o compileMe cs372hw2_test.cpp cs372hw2.cpp"
+
+2. failed first test which was calling a function that returned true, and seeing
+if it equaled false.
+
+3. added first two real tests: strings of "", and "2". program only returns 0.
+Made program pass both tests, but only works on single ints.()
+
+4. changed it so it takes as many single ints as possible, and then added the 
+while loop to make each number as long as possible. since im not checking what the
+delimiter is, i automatically passed all the \n tests
+
+5. added delimiter support. bassically if the first chars in the string are //, 
+delete first 4 chars and continue
+
+Note: im assuming that delimiters can not be ints, and can only be one char length,
+	because increasing the length is #7 on the optional list.
+	Would be easy to add tho, just save the length and what the delimiter is,
+	and at the bottom of the main for loop, check for it. if its there, i+=delimiter
+	lenght, else jump the default ++i that is there now.
+
+6. added negaive support. was a lot easier than i expected. i put the negative in a 
+vector, and dont add it to returnMe. at the end, if there is anything in the vector,
+that means the string contained a negative, and i print the error message along with 
+the error

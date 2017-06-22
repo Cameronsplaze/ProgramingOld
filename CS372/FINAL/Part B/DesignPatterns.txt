@@ -1,0 +1,116 @@
+Cameron Showalter
+Spring 2017
+CS 372
+Final Part B
+Class Repository: https://github.com/AKQuaternion/Spring2017CS372DesignPatterns/tree/
+master/2017CS372DesignPatterns
+
+Strategy Pattern:
+	This is a good pattern to use when you have one set goal, but many ways to achieve it with different costs
+ /rewards with each route. I found an example in sourcemaking I really like. If you have to go to the airport, you
+ have different ways to get there. You can take a car, bus, subway, maybe even a helicopter/submarine. Each get you
+ to the airport, but have different costs, take different amounts of time, etc. You can choose a strategy based on
+ your current circumstances to get to the airport on time.
+
+
+Interpreter Pattern:
+	When a program encounters a complicated, but well understood "language" repeated times, you need a class that
+ can read from the language and interpret what you want. That way, throughout your program, whenever you need a 
+ translator of sorts, you just have to make one call to a class. It is similar to talking to a person who speaks 
+ another language. You can either re-open your dictionary every time you need to know what they are saying, or you 
+ could make one quick call to a translator who puts every into a known context for you to understand.
+
+
+Decorator Pattern:
+	Use this pattern when there are pieces of code that you want your base class to change its object zero or
+ more times. The example that I thought explained this well was the coffee shop one. You have things that a coffee
+ must have, like what beverage the user is getting, but you also have things the user may/may not want. With this
+ pattern, you can make things like "number of shots of caffeine" and "extra sugar" decorators, and if I want zero
+ shots or two extra shots, this pattern handles them both.
+
+
+Observer Pattern:
+	This pattern is used when if one state changes, you need others to change/update. With a weather station,
+ whenever the weather changes, the company needs to update their displays, and also automatically send the
+ information out to others. Another example is during a auction, people can bid for items. The auctioneer acts like
+ an observer, and whenever one bidder/state changes, notifies the rest of the bidders of the change and updates them
+ with the new price of the item. (Auction example from sourcemaking).
+
+
+Adapter Pattern:
+	Use this one when you want to make classes work together that otherwise wouldn't be able to. This changes 
+ the interface of a program to something the target audience can use by wrapping a class. The example the website used 
+ was just a simple ratchet-adapter-socket. Because the United States uses the imperial measuring system and the rest 
+ of the world uses metric, you could write a metaphorical adapter pattern to convert from one to the other. This 
+ pattern wraps a class with a bunch of "translate" methods, and can provide different viewpoints for other programs 
+ to call.
+
+
+Facade Pattern:
+	Facade is a little like an adapter pattern between the user/client and a program, except that instead of just
+ translating, it simplifies the interface before the client sees it. The point of this is to reduce a complicated class 
+ down when all the features of that class are not needed. Installers for programs are a facade for installing the program,
+ because instead of extracting a file and putting all of the directories where they need to go to run the program, you
+ just have to click install and the facade handles all of the installing for you.
+
+
+Composite Pattern:
+	Composite is used whenever you have a tree-like program you need to write. The example I liked was the file
+ /folder for a play list. A folder can contain both files, and other folders. Because you have an unknown of folders
+ inside folders with files sprinkled around, It would be difficult to write a folder structure without some form of
+ composite. An example that sourcemaking used was using it for a calculator. You have an unknown of numbers (like
+ files) separated by operators (like the folders, each can hold a number or an other operator). The end result for
+ the calculator should should be a binary tree, where as the play list is not limited by two branches, but composite
+ can handle both.
+
+
+Visitor Pattern:
+	I don't understand the details to this one extremely well, but from what I read, it is similar to a taxi
+ company. When a class, or person, requests a taxi, the company dispatches one to the person. The person then enters
+ the taxi, and gives control of where he/she travels over to the driver of the taxi. If I understand this correctly,
+ you may want to use this when you want to use the interface segregation principle and not have classes with a bunch
+ of code that they may not always use. This pattern is used when you avoid polluting a class with many, distinct
+ operations, according to sourcemaking. 
+ 
+
+State Pattern:
+	State is used when you want to cycle through what a program does without the current function knowing what
+ the next function is for. You have a state class, and each function inherits from it. The state class, when called,
+ will look at what the current state is, and move to the next one and call it. A common example is how remotes work,
+ or at least older ones. When you pressed next channel, the TV would change the channel without checking if you had
+ reception for that channel or not. Another one that we did in class was the MP3 player. You could do things like
+ cycle between "Play Song", "Radio", and "Off".
+
+
+Null Object Pattern:
+	When you call a class that might not exist, but you want your program to not know if the call worked, you 
+ could wrap the called class in a Null Object Pattern. This is for if the class is not there, programs that call it 
+ will still behave the same as tho it was. An example could be you have a class bird. You have another class for 
+ controlling how the bird flies. When your main program sends the signal to make the bird fly, you want it to call 
+ the bird class, even if you are simulating winter and there are no birds around. The bird flying class operates 
+ the same with/without any birds in the area.
+
+
+Template Pattern:
+	This is the one we did in class when we factored the group project for HW4. When you have different classes 
+ that are similar, but different enough not to be able to combine all into one method, then use this pattern. What 
+ it does is creates a skeleton base class that has all the repeat code contained inside, then virtual placeholder 
+ methods that each inherited class overrides to their specific differences. For HW4, vertical, horizontal, and layered 
+ all were the same, except for how much you translated before drawing each shape. The for loop for drawing the vector 
+ of shapes went inside the skeleton class, and translate was overridden in each shape. 
+
+
+Iterator Pattern:
+	This pattern is useful when you, for example, want to support different data structures, and want to have
+ algorithms for all of them. You only have to write one algorithm (one for sort, one for merge, etc.), and one data
+ structure (one linked list, one tree, etc.). Normally you would have to re-write each algorithm for each data
+ structure, but not with Iterator. Iterator provides a way for the algorithms to access each structure without
+ (maybe) accessing privates and compromising the data structure itself.
+
+
+
+
+
+Resources:
+https://sourcemaking.com/design_patterns
+

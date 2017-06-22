@@ -1,0 +1,157 @@
+
+
+%-----ASSIGNMENT 1-----
+%% Draws a one square inch box and inch in from the bottom left
+
+/inch {72 mul} def      % Convert inches->points (1/72 inch)
+
+newpath                 % Start a new path
+1 inch 1 inch moveto    % an inch in from the lower left
+2 inch 1 inch lineto    % bottom side
+2 inch 2 inch lineto    % right side
+1 inch 2 inch lineto    % top side
+stroke                  % Draw the box on the paper
+showpage
+
+clear
+
+%-----ASSIGNMENT 2-----
+/x 2 def
+0 10 360 {              % Go from 0 to 360 degrees in 10 degree stepss
+	newpath               % Start a new path
+
+	gsave                 % Keep rotations temporary
+	144 144 moveto
+	rotate              % Rotate by degrees on stack from 'for'
+	72 x rlineto
+	
+	stroke
+	grestore              % Get back the unrotated state
+	/x x 3 add def
+} for                   % Iterate over angles
+
+showpage
+
+clear
+
+%-----ASSIGNMENT 3-----
+
+% Creates one inch box at xcoord, ycoord
+/box {
+	newpath
+	moveto
+	72 0 rlineto
+	0 72 rlineto
+	-72 0 rlineto
+	closepath
+} def
+
+
+gsave                           % Preserve the old coordinates
+72 72 translate               % (first x y spot) Set origin to (72, 72)
+0 1 2{
+	0 1 2{
+		72 0 translate              
+		0 0 box stroke                % Draw the box at the new origin
+	} for
+-216 72 translate
+} for
+grestore                        % Restore the old coordinates
+showpage
+
+clear
+
+%-----ASSIGNMENT 4-----
+
+/box {
+	newpath
+	moveto                                % Current point is on stack
+	0 72 rlineto                          % Left
+	72 0 rlineto                          % Top
+	0 -72 rlineto                         % Right
+	closepath                             % Bottom
+} def
+
+0 setgray                               % 100% black
+1 setlinewidth                          % One point thick lines
+72 72 moveto 72 144 lineto stroke       % Draw a one inch line
+
+gsave                                   % Save a copy of the current settings
+	0.5 setgray                           % 50% black
+	10 setlinewidth                       % 10 point wide lines
+	144 72 moveto 144 144 lineto stroke   % Draw a one inch wide line
+	216 72 box                            % Build a square path...
+	0.35 setgray                          %   make it a little darker...
+	fill                                  %   and fill it.
+grestore                                % Go back to the original settings
+
+1 setlinewidth                          % Make the box lines wider
+300 72 box stroke                       % Draw a black box
+
+300 72 translate
+0 15 45{
+	gsave
+	 rotate 				%rotate by degrees on stack
+	0 0 box stroke                       % Draw a black box
+	grestore
+} for
+showpage
+
+clear
+
+%-----ASSIGNMENT 4-----
+%Pizza crust
+newpath
+144 144 moveto
+144 144 72 0 315 arc
+144 144 moveto
+144 144 68 0 315 arc
+ %Pizza slice
+144 144 moveto
+195 195 lineto  %note, all 45's are 51 +- 144
+
+144 144 moveto
+144 216 lineto
+
+144 144 moveto
+93 195 lineto
+
+144 144 moveto
+72 144 lineto
+
+144 144 moveto
+93 93 lineto
+
+144 144 moveto
+144 72 lineto
+
+144 144 moveto
+195 93 lineto
+
+%Pepperoni
+/pepperoni {	moveto
+			translate
+			0 0 2 0 360 arc }def
+%first third, and second fourth numbers have to be same
+%x y are based on last piece placed
+clear
+120 120 120 120 pepperoni
+15 18 15 18 pepperoni
+20 20 20 20  pepperoni
+0 20 0 20  pepperoni
+20 0 20 0  pepperoni
+-40 -20 -40 -20  pepperoni
+-40 0 -40 0  pepperoni
+30 15 30 15  pepperoni
+30 15 30 15  pepperoni
+0 -60 0 -60  pepperoni
+-25 -25 -25 -25  pepperoni
+30 15 30 15  pepperoni
+-5 15 -5 15  pepperoni
+30 15 30 15  pepperoni
+-50 -50 -50 -50 pepperoni
+30 0 30 0  pepperoni
+		
+stroke
+
+showpage
