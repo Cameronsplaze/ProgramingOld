@@ -1,0 +1,26 @@
+User stories for Battleship:
+
+1) As a user I want to know if I hit, miss, or sink a ship.
+1) As a user I want to know when someone wins.
+1) As a user I want to be able to quit during a game.
+
+2) As a user I want the turns to alternate after each miss.
+2) As a user I want to be able to select a space on the board for firing.
+
+3) As a user I want to see which player's turn it is.
+3) As a user I want to be able to switch my weapons in a game.
+
+4) As a user I want the option to select different weapons before a game.
+4) As a user I want to be able to go back to the start menu in the middle of a game.
+
+5) As a user I want to see a board with my ships on it.
+5) As a user I want a board with all my misses and hits.
+5) As a user I want the option to change the number and size of ships before a game.
+
+6) As a user I want a start game menu/prompt.
+6) As a user I want to be able to place my ships.
+
+8) As a user I want to play against a computer.
+
+16) As a project owner, I want to be able to make new game modes.
+16) As a project owner, I want to be able to make it networked.
