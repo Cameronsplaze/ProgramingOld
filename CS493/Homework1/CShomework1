@@ -1,0 +1,18 @@
+Cameron Showalter
+Computer Security I
+
+Password 1:
+	Just opened the file in gedit. Looks like the password is "nuB?",
+	but it could be Lawl. 
+
+Password 2:
+	After giving up on hashcat and getting john to work, ran the commands
+	on your lecture notes, and "$tFu". Lecture notes say to use --format=Raw-SHA1,
+	I couldn't get it to work unless I used --format=Raw-SHA256.
+
+
+Password 3:
+	Opened file in Bless, copied the hex into gedit, and deleted the spaces.
+	Made sure there was no new line, Ran that through John, and got "r0FL"
+
+
