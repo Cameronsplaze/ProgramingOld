@@ -5,19 +5,21 @@ Using C++ with SFML:
 	g++ -c main.cpp
 	g++ main.o -o (newFileName) -lsfml-graphics -lsfml-window -lsfml-system <-lsfml-audio> <-lsfml-network>
 	./(newFileName)
-Using C++
-	g++ <-std=c++14> -o (newFileName) (File1.cpp)(File2.cpp)
+Using C++:
+	g++ -std=c++17 -o (newFileName) (File1.cpp)(File2.cpp)
 	./(newFileName)
-using Crystal
+Using C++ with Threads:
+	g++ -pthread -std=c++17 -o (newFileName) (File1.cpp)(File2.cpp)
+using Crystal:
 	crystal (newFile.cr)
-Using Forth
+Using Forth:
 	gforth (File1.fs)(File2.fs) -e bye
-using Haskell
+using Haskell:
 	ghc -o (newFileName) (File1.hs)(File2.hs)
 	./(newFileName)
-using Lua
+using Lua:
 	luac -o (newFileName) (File1.lua)(File2.lua)
 	lua (newFileName)
-using Python
+using Python:
 	python3 (File1.py)
 
