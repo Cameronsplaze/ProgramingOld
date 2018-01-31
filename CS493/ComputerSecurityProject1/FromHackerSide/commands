@@ -1,0 +1,4 @@
+sudo ./iodine/bin/iodined -fP csc 10.0.0.1 test.asdf
+ssh -v  mostsecureserverever@10.0.0.2
+scp -v -r mostsecureserverever@10.0.0.2:Desktop/TopSecretStuff .
+
