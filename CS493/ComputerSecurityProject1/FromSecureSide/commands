@@ -1,0 +1,8 @@
+
+sudo ./iodine/bin/iodine -fP csc 10.0.2.15 test.asdf
+sudo service ssh start
+
+
+ssh -D 5000 -N totallynotahacker@10.0.0.1
+
+
