@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+	{% if current_user.username != -1 %}
+	<h1>Hello, {{ current_user.username }}!</h1>
+	{% else %}
+	<h1>Hello Prime Minister!</h1>
+	{% endif %}
+	<h2>Your Bids:</h2>
+		{% for aBid in yourBids %}
+			{{ aBid }}<br>
+		{% endfor %}
+	<h2>Vegetable List:</h2>
+		{% for vegi in allVegetables %}
+			{{ vegi }}<br>
+		{% endfor %}
+	<br>
+	<h2>Place Bids</h2>
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<p>
+			{{ form.vegetable.label }}<br>
+			{{ form.vegetable(size=32) }}<br>
+			{% for error in form.vegetable.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.amount.label }}<br>
+			{{ form.amount(size=32) }}<br>
+			{% for error in form.amount.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>{{ form.submit() }}</p>
+	</form>
+
+
+{% endblock %}

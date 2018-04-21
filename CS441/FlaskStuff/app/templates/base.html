@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% if title %}
+		<title>{{ title }} - Office of Piotr bin Izhk</title>
+		{% else %}}
+		<title>Welcome to Izhkstan!</title>
+		{% endif %}
+	</head>
+	<body>
+		<div>
+			Pages:
+			<a href="{{ url_for('index') }}">Home</a>
+			{% if current_user.is_anonymous %}
+			<a href="{{ url_for('login') }}">Login</a>
+			<a href="{{ url_for('register') }}">Register</a>
+			{% else %}
+			<a href="{{ url_for('logout') }}">Logout</a>
+				{% if current_user.username == -1 %}
+				<a href="{{ url_for('prime') }}">Admin</a>
+				{% endif %}
+			{% endif %}
+		</div>
+		<hr>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			<ul>
+				{% for message in messages %}
+				<li>{{ message }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		{% endwith %}
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>
+
+
+

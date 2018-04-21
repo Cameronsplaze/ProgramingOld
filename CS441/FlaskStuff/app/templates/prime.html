@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Hello Prime Minister!</h1>
+	<h1>All Bids:</h1>
+	{% for aBid in theBids %}
+		{{ aBid }}<br>
+	{% endfor %}
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<h2>Add Vegi?</h2>
+		<p>
+			{{ form.vegetable.label }}<br>
+			{{ form.vegetable(size=32) }}<br>
+			{% for error in form.vegetable.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>{{ form.submit() }}</p>
+	</form>
+
+
+{% endblock %}
